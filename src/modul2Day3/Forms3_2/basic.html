@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="module" src="./basic.ts"></script>
+</head>
+<body>
+
+    <main>
+        <div>
+            <h2>Fonts Generator</h2>
+
+            <form onsubmit="return false">
+                <input 
+                type="range" 
+                name="font-size" 
+                id="font-size" 
+                min="12" 
+                max="40">
+
+                <label for="font-size">Font-Size</label>
+                <select name="font-family" id="font-family">
+                    <option value="">font1</option>
+                    <option value="">font2</option>
+                    <option value="">font3</option>
+                </select>
+
+                <input 
+                type="text" 
+                name="text-input" 
+                id="text-input" 
+                placeholder="type something">
+
+
+            </form>
+            <div class="output-area">test</div>
+        </div>
+    </main>
+    
+</body>
+</html>
