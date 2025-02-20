@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Creditcard lvl1</title>
+    <script type="module" src="./creditcard.ts"></script>
+    <link rel="stylesheet" href="./assets/css/creditcard.css">
+</head>
+<body>
+
+    <main>
+        <div class="output-div">output auf bild von Karte
+            <!-- pic of lovely creditcard -->
+             <img src="#" alt="dummycard">
+            <!-- p tags that will be changed by ts -->
+             <p class="number-placeholder">#### #### #### ####</p>
+             <p class="name-paceholder">YOUR NAME</p>
+             <p class="expiration-placeholder">MM/YY</p>
+        </div>
+
+        <form class="card-form" action="">
+            <label for="number">Card Number</label>
+            <input 
+            type="text" 
+            id="card-number"
+            maxlenght="16"
+            placeholder="16 digits">
+
+            <label for="card-holder">Card Holder</label>
+            <input 
+            type="text"
+            id="card-holder">
+
+            <!-- <span class="expiration">
+                <input type="text" name="month" placeholder="MM" maxlength="2" size="2"/>
+                <span>/</span>
+                <input type="text" name="year" placeholder="YY" maxlength="2" size="2"/>
+            </span> -->
+
+            <label for="expiration-date">Expiration Date</label>
+            <input 
+            type="text"
+            id="expiration-date"
+            maxlength="4"
+            placeholder="MMYY">
+
+            <label for="cvc">CVC</label>
+            <input 
+            type="text"
+            id="cvc"
+            maxlength="3"
+            placeholder="3 digits">
+
+            <input 
+            id="submit"
+            type="submit" 
+            value="Submit">
+        </form>
+    </main>
+
+    
+</body>
+</html>
+
+
