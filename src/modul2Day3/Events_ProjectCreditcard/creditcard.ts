@@ -1,4 +1,4 @@
-const form = document.querySelector<HTMLBodyElement>(".card-form")
+const form = document.querySelector(".card-form")
 const userNumber = document.querySelector<HTMLInputElement>("#card-number");
 const userName = document.querySelector<HTMLInputElement>("#card-holder");
 const userDate = document.querySelector<HTMLInputElement>("#expiration-date");
@@ -14,6 +14,8 @@ function fillCard(event: Event) {
     event.preventDefault();
 // check if the html elements are existent
     if (form && userNumber && userName && userDate && outputDiv && outputNumber && outputName && outputDate){
+        console.log("html complete");
+        
         const number = userNumber.value;
         const name = userName.value;
         const date = userDate.value;
