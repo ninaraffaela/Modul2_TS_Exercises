@@ -1,3 +1,11 @@
+h1 {
+    color: teal;
+}
+
+img {
+    width: 300px;
+}
+
 input:last-of-type {
     color: white;
     padding: 0.4rem 4rem;
