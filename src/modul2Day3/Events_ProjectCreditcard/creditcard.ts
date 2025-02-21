@@ -17,18 +17,19 @@ console.log("hdier");
 
 // check if the html elements are existent
     if (form && userNumber && userName && userDate && outputDiv && outputNumber && outputName && outputDate){
-        console.log("html complete");
+        // console.log("html complete");
         
         const number = userNumber.value;
         const name = userName.value;
         const date = userDate.value;
-console.log(number, name, date);
+        // console.log(number, name, date);
 
-        
+        // change the info on the card
         outputNumber.innerHTML = `${number}`
         outputName.innerHTML = `${name}`
         outputDate.innerHTML = `${date}`
 
+        // empty the input fields
         userNumber.value=""
         userName.value=""
         userDate.value=""
@@ -38,14 +39,13 @@ console.log(number, name, date);
 
 
 
-// IDEAS for validate expiration date
+// IDEA for validate expiration date
 // const expiration = userExpiration.value;
 // const today = newDate();
-
 // if (expiration < today)|{
 //     error = "Ihre Karte ist abgelaufen."
 // }
 
 
-// IDEAS Let the User choose a different card design. 
+// IDEA Let the User choose a different card design. 
 //  like with the superballs to change the color.
