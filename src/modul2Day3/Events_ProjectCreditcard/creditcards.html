@@ -21,39 +21,41 @@
              <p class="name-placeholder">YOUR NAME</p>
              <p class="expiration-placeholder">MM/YY</p>
         </div>
-<hr>
+
         <form class="card-form" action="">
-            <label for="card-number">Card Number</label>
-            <input 
-            type="text" 
-            id="card-number"
-            maxlength="16"
-            placeholder="16 digits">
+            <div>
+                <label for="card-number">Card Number</label>
+                <input 
+                type="text" 
+                id="card-number"
+                maxlength="16"
+                placeholder="16 digits">
+            </div>
+            
+            <div>
+                <label for="card-holder">Card Holder</label>
+                <input 
+                type="text"
+                id="card-holder">
+            </div>
 
-            <label for="card-holder">Card Holder</label>
-            <input 
-            type="text"
-            id="card-holder">
+            <div>
+                <label for="expiration-date">Expiration Date</label>
+                <input 
+                type="text"
+                id="expiration-date"
+                maxlength="4"
+                placeholder="MMYY">
+            </div>
 
-            <!-- <span class="expiration">
-                <input type="text" name="month" placeholder="MM" maxlength="2" size="2"/>
-                <span>/</span>
-                <input type="text" name="year" placeholder="YY" maxlength="2" size="2"/>
-            </span> -->
-
-            <label for="expiration-date">Expiration Date</label>
-            <input 
-            type="text"
-            id="expiration-date"
-            maxlength="4"
-            placeholder="MMYY">
-
-            <label for="cvc">CVC</label>
-            <input 
-            type="text"
-            id="cvc"
-            maxlength="3"
-            placeholder="3 digits">
+            <div>
+                <label for="cvc">CVC</label>
+                <input 
+                type="text"
+                id="cvc"
+                maxlength="3"
+                placeholder="3 digits">
+            </div>
 
             <input 
             id="submit"

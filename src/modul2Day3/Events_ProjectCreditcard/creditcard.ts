@@ -7,16 +7,17 @@ const form = document.querySelector(".card-form")
 const userNumber = document.querySelector<HTMLInputElement>("#card-number");
 const userName = document.querySelector<HTMLInputElement>("#card-holder");
 const userDate = document.querySelector<HTMLInputElement>("#expiration-date");
+const userCvc = document.querySelector<HTMLInputElement>("#cvc");
 
 form?.addEventListener("submit", fillCard);
 
 function fillCard(event: Event) {
     event.preventDefault();
 
-console.log("hdier");
+// console.log("hdier");
 
 // check if the html elements are existent
-    if (form && userNumber && userName && userDate && outputDiv && outputNumber && outputName && outputDate){
+    if (form && userNumber && userName && userDate && userCvc && outputDiv && outputNumber && outputName && outputDate){
         // console.log("html complete");
         
         const number = userNumber.value;
@@ -33,6 +34,7 @@ console.log("hdier");
         userNumber.value=""
         userName.value=""
         userDate.value=""
+        userCvc.value=""
     }
 
 }
