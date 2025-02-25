@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>project-Hangman</title>
+    <link rel="stylesheet" href="./style.css">
+ 
+  </head>
+  <body>
+    <main>
+      <div class="head">
+       
+       <img src="./hangman.webp" alt="hangman">
+       <h1>Hangman</h1>
+      </div>
+
+
+    </div>
+
+
+    <p id="word-display">_ _ _ _ _ _ _</p>
+    <p id="wrong-guesses">Wrong guesses: </p>
+    <p id="remaining-guesses">Remaining guesses:</p>
+    <p id="WinOrRestart"></p>
+    <br>
+    <div class="letter-btns"></div>
+
+    
+    <button id="restart">Neustart</button> 
+
+    <script>
+      const buttons = document.querySelector(".letter-btns");
+      const alphabet = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
+      for (const letter of alphabet){
+        if (buttons) {buttons.innerHTML += `<button class="letter-btn"> ${letter}</button>`
+      }
+      }
+      const allLetterBtns = document.querySelectorAll(".letter-btn");
+      console.log(allLetterBtns)
+      </script>
+      
+
+      <script type="module" src="./basic.ts"></script>
+
+
+
+    </main>
+
+
+   <footer>
+    <br>
+    <hr>
+    <a href="../../index.html">Back to Homepage</a>
+
+   </footer>
+
+
+  </body>
+
+</html>
+
+

@@ -1,0 +1,88 @@
+
+.head{
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(59, 64, 67);
+  font-size: 3rem;
+  color: aliceblue;
+}
+.head img{
+
+}
+
+#word-display{
+  font-size: 50px;
+}
+img{
+  width: 200px;
+}
+
+p{
+  font-size: 18px;
+}
+
+.letter-btn {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+  background-color: aquamarine;
+  border: 1px solid gray;
+}
+
+button{
+ margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  height: 45px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+  background-color: rgb(204, 224, 224);
+}
+
+#restart {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* style.css */
+
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+
+#restart {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#WinOrRestart {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.animated-text {
+  animation: rainbowGlow 2s infinite;
+}
+
+@keyframes rainbowGlow {
+  0% { color: red; text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); }
+  20% { color: orange; text-shadow: 0 0 5px rgba(255, 165, 0, 0.8); }
+  40% { color: yellow; text-shadow: 0 0 5px rgba(255, 255, 0, 0.8); }
+  60% { color: green; text-shadow: 0 0 5px rgba(0, 255, 0, 0.8); }
+  80% { color: blue; text-shadow: 0 0 5px rgba(0, 0, 255, 0.8); }
+  100% { color: purple; text-shadow: 0 0 5px rgba(128, 0, 128, 0.8); }
+}
