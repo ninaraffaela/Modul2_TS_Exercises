@@ -1,3 +1,23 @@
+🍀25.02.2025 
+GroupProject to create a HangMan Game.
+created by oguz, hao, nina.
+
+
+at the end we managed to get 2 different versions out of it. 👾
+plus a huge list of optional sprinkles we could add later.
+
+
+
+
+(26.02.2025)
+** currently missing in v1 - set the colored buttons back with restart
+
+** currently missing in v2 - update on the code including pictures
+
+
+_____________
+
+
 HAO: 
 const words: string[] = [
     'APPLE', 'BANANA', 'CHAIR', 'TABLE',
