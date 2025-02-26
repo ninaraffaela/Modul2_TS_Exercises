@@ -1,6 +1,8 @@
 // const words:string[] = ["Abendbrot", "Brueckentag", "Erklaerungsnot", "Fingerspitzengefuehl", "Fremdschaemen", "Geborgenheit", "Geschmacksverirrung", "Schweinehund", "Kopfkino", "Kummerspeck", "Schnapsidee", "Torschlusspanik", "verabredet", "verschlimmbessern", "Vorfreude", "Weltschmerz", "Zeitgeist", "Zugzwang"];
 
-const words:string[] = ["test", "Maus"]
+const words:string[] = ["test", "Maus", "Apple", "Tisch"]
+
+
 
 const maxAttempts: number = 6;
 let attemptsLeft: number = maxAttempts;
@@ -24,11 +26,13 @@ function createKeyboard(): void {
     for (const letter of germanLetters) {
         const button = document.createElement("button");
         //! MISSING give the created button a class. then style the class in handleGuess()
+        // ! MISSING remove the class for colors
         button.textContent = letter;
         button.addEventListener("click", () => handleGuess(letter));
         keyboard.appendChild(button);
     }
 }
+// 
 
 
 //# // Das Wort auf dem Bildschirm anzeigen (Beispiel: _ _ _ _ _)
@@ -143,13 +147,13 @@ function handleGuess(letter: string): void {
 
     if (!selectedWord.includes(letter) && button) {
         attemptsLeft--;
-        // ! MISSING style the button red'button.style'
+        // !  style the button red'button.style'
         
         button.style.color = " rgba(247, 106, 106, 0.475)";
         message.textContent = `Der Buchstabe ${letter} ist nicht im Wort.`;
     } else {
         if (button){
-        // ! MISSING style the button green 
+        // !  style the button green 
         button.style.color = " rgba(81, 194, 28, 0.47)";
         message.textContent = `Gut gemacht! Der Buchstabe ${letter} ist im Wort.`;
     }
