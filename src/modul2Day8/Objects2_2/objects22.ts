@@ -22,11 +22,12 @@ const singers: Singer[] = [
     { name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock" },
 ];
 
-// # was will er hier?
-singers.sort((a, b) => a.name - b.name);
+// ! Sort string 
+// * local compare für strings verwenden
+singers.sort((a, b) => a.name.localeCompare(b.name));
 console.log("Singers sorted alphabetically: ", singers);
 
-
+// ! Sort numbers
 singers.sort((a, b) => a.period_active.start - b.period_active.start);
 console.log("Singers sorted by start of carreer: ", singers);
 

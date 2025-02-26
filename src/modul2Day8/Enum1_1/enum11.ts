@@ -26,3 +26,15 @@ enum Months {
 };
 
 console.log(Months);
+
+
+// # how to get only the days?
+// - not like that
+for (const day in Weekdays) {
+    console.log(day);
+};
+
+// - not loke that
+for (let i=0; i < Object.values(Weekdays).length; i++){
+    console.log(Object.values(Weekdays)[i]);
+};
