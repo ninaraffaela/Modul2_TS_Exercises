@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Rock Paper Scissors</title>
+    <script type="module" src="./rps.ts"></script>
+</head>
+<body>
+    <h1>👾Welcome to Ninis Rock Paper Scissor👾</h1>
+
+
+    <!-- - CHOOSE ROUNDS -->
+    <form action="" id="round-form">
+        <h2>🍀Choose the length of your game</h2>
+
+        <label for="choose-rounds">How many rounds do you want to play?</label> 
+        <select name="usericon" id="choose-rounds"> 
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+
+        <input type="submit">
+    </form>
+    <!-- after submit - change it to no-show -->
+
+
+
+    <!-- optional - Choose a Player -->
+    <!-- <label for="user-icon">Choose your player</label> 
+    <select name="usericon" id="user-icon"> 
+        <option value="🖌️">🖌️</option>
+        <option value="🍀">🍀</option>
+        <option value="🦕">🦕</option>
+        <option value="🫐">🫐</option>
+        <option value="🎁">🎁</option>
+        <option value="🌳">🌳</option>
+        <option value="🐈">🐈</option>
+        <option value="🐕">🐕</option>
+    </select> -->
+
+
+    <!-- - Display RoundCount -->
+     <div class="round-count"></div>
+     <!-- im default no-show -->
+
+    <!-- - Display WinCount -->
+     <div class="win-count"></div>
+     <!-- im default no-show -->
+
+
+    
+     <!-- -  CHOOSE FIGHTER -->
+      <!-- # kann ich den click hier loggen? -->
+      <section class="choose-fighter">
+        <p>Choose your Fighter:</p>
+        <img id="rock" src="#" alt="rock">
+        <img id="paper" src="#" alt="paper">
+        <img id="scissor" src="#" alt="scissor">
+      </section>
+
+
+
+    <!-- - ARENA -->
+     <section class="arena">
+        <div class="userFighter"></div>
+        <div class="comFighter"></div>
+     </section>
+
+
+    
+     <!-- - RESTART BUTTON -->
+      <button class="restart">Restart</button>
+</body>
+</html>
