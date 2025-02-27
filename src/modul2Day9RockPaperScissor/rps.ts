@@ -1,4 +1,4 @@
-// ! Link HTML
+// ! Link with HTML
 
 // - chooseRound, countRound
 const form = document.querySelector("#round-form");
@@ -31,7 +31,11 @@ console.log(Fighter[0]); // Rock
 console.log(Fighter[1]); // Paper
 console.log(Fighter[2]); // Scissors
 
-
+// ! pick global variables
+// let currentRound = 0
+// let userPoints = 0
+// let comPoints = 0
+// 
 
 // ! START GAME
 // createRoundCount()
@@ -68,14 +72,14 @@ function getUserRounds(event:Event) {
 // ! create RoundCount
 
 // roundform no-show / hidden
-// # not sure how
+// # not sure how - look at hangman classList
 // roundcount show
 
 // roundcount.innerhtml  roundsPlayed / roundsToPlay
 // 
 // roundsToPlay = userRounds 
-// roundsPlayed  = i  (i = 0; i < roundsToPlay; i++)
-// # not sure how
+// roundsPlayed  = i  for (let i = 0; i < roundsToPlay; i++)
+// # not sure how - compare with correct syntax of foor loops. which brackets where.
 
 
 // ! create WinCount
@@ -163,4 +167,6 @@ function getUserRounds(event:Event) {
 
 
 
+// ! inspiration
+// https://alpayc.github.io/Project_Rock_Paper_Scissors/
 
