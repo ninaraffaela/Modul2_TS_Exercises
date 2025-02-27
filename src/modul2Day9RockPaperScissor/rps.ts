@@ -33,44 +33,49 @@ console.log(Fighter[2]); // Scissors
 
 
 
-
-// # wo packe ich event.preventDefault hin? in jede funktion?
-
-
-// ! chooseRounds
-
-form?.addEventListener("submit", getUserRounds);
-
-// eventlistener on form. submit => getValue of userRounds. return?
-// roundform no-show / hidden
-// # not sure how
-
-
 // ! START GAME
 // createRoundCount()
 // createWinCount()
 // hideChooseRounds
 
+// # wo packe ich event.preventDefault hin? in jede funktion?
 
-// ! create RoundCount
 
+
+
+// ! user Chooses Rounds
+// user submits a selectform with a chosen option of rounds
+
+form?.addEventListener("submit", getUserRounds);
+// # wie könnte ich hier mehrere funktionen rein?
+
+
+
+// ! get User Rounds - WORKS
 function getUserRounds(event:Event) {
     event.preventDefault()
 
     if(userRounds){
     const roundsToPlay = Number(userRounds.value);
-    console.log(userRounds); //function
+    console.log(userRounds); //HTML code
     console.log(roundsToPlay); // userInput Number as Number
-    console.log(getUserRounds);
-    
+    console.log(getUserRounds);  // function as code
     return roundsToPlay;
     }
 }
 
-// roundCount =  playedRounds / roundsToPlay
+
+// ! create RoundCount
+
+// roundform no-show / hidden
+// # not sure how
+// roundcount show
+
+// roundcount.innerhtml  roundsPlayed / roundsToPlay
+// 
 // roundsToPlay = userRounds 
-// playedRounds = i  (i = 0; i < roundsToPlay; i++)
-// innerHTML
+// roundsPlayed  = i  (i = 0; i < roundsToPlay; i++)
+// # not sure how
 
 
 // ! create WinCount
@@ -129,20 +134,26 @@ function getUserRounds(event:Event) {
 
 // ! chooseUserFighter
 // userFighter . Value of click 1 2 or 3
+// or enum 1 2 3
 
 
 // ! randomComFighter
 // comFighter . random number between 1 and 3
+// enum fighter
 
 
 // ! displayFighter
 //  userFighter innerHTML
+//  vs. 
 //  comFighter innerHTML
 
 
 // ! restartGame
-// 
-
+// choose rounds un hidden
+// roundCount hidden
+// winCount hidden
+// reset arena clear players
+//  
 
 
 
