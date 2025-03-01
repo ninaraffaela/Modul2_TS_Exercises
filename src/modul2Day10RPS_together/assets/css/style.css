@@ -2,11 +2,11 @@
     --mb: 5vh;
     --pd: 2vh;
     --br: 10px;
-    --english-violet: #6b4e71ff;
-    --charcoal: #3a4454ff;
+    --english-violet: rgb(19, 139, 11);
+    --charcoal: rgb(91, 32, 173);
     --paynes-gray: #53687eff;
-    --misty-rose: #f5ddddff;
-    --french-grey: #cdc0c6;
+    --misty-rose: rgba(93, 143, 156, 0.704);
+    --french-grey: #e40fba;
   }
   
   
@@ -31,15 +31,15 @@
   }
   
   h2 {
-    font-size: 2vw;
+    font-size: 2rem;
   }
   
   h3 {
-    font-size: 3vw;
+    font-size: 3rem;
   }
   
   p {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
   }
   a {
     text-decoration: none;
@@ -53,11 +53,11 @@
   
   div,
   .reset {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
   }
   
   label {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
   }
   
   img {
@@ -122,13 +122,14 @@
     border-radius: var(--br);
     background-color: var(--french-grey);
     text-align: center;
+    color: white;
   }
   
   .tag {
     margin-top: -0.5%;
     display: inline-block;
     background-color: var(--english-violet);
-    color: var(--misty-rose);
+    color: white;
     padding: 0.5%;
     border: 2px solid var(--charcoal);
     border-radius: var(--br);
@@ -151,6 +152,7 @@
     margin-bottom: var(--mb);
     display: flex;
     justify-content: center;
+    font-size: 1.5rem;
   }
   
   /* Section Schere Stein Papier Buttons */
@@ -162,7 +164,7 @@
   }
   
   .choices button {
-    background-color: white;
+    background-color: rgba(105, 226, 115, 0.722);
     width: 12vw;
     height: 12vw;
     display: inline-block;
@@ -186,8 +188,8 @@
     padding: var(--pd);
     border: 2px solid var(--charcoal);
     border-radius: var(--br);
-    background-color: var(--paynes-gray);
-    color: var(--misty-rose);
+    background-color: var(--french-grey);
+    color: rgb(234, 161, 208);
     transition: 0.4s ease-in-out;
   }
   
@@ -195,8 +197,8 @@
     cursor: pointer;
     box-shadow: 1px -1px 10px var(--paynes-gray);
     transform: scale(1.01);
-    background-color: var(--english-violet);
-    color: var(--misty-rose);
+    background-color: teal;
+    color: white;
   }
   
   .display-none {
@@ -206,3 +208,9 @@
   .display-block {
     display: block;
   }
+/* colorchoices before
+  --english-violet: #6b4e71ff;
+  --charcoal: #3a4454ff;
+  --paynes-gray: #53687eff;
+  --misty-rose: #f5ddddff;
+  --french-grey: #cdc0c6; */
