@@ -12,19 +12,19 @@
 
 
 // ! HTML CONNECTION
-
-const movieContainer = document.querySelector("movies");
 const sortAscBtn = document.querySelector(".year-asc");
 const sortDescBtn = document.querySelector(".year-desc");
 const sortRateBtn = document.querySelector(".rate-desc");
 const userSearchInput = document.querySelector<HTMLInputElement>("input");
 const searchBtn = document.querySelector(".search-btn")
+const movieContainer = document.querySelector(".movies");
 
 
 // ! EVENTLISTENERS
-sortAscBtn?.addEventListener("click", sortMoviesAscending);
-sortDescBtn?.addEventListener("click", sortMoviesDescending);
-searchBtn?.addEventListener("click", sortMoviesRated);
+// sortAscBtn?.addEventListener("click", sortMoviesAscending);
+// sortDescBtn?.addEventListener("click", sortMoviesDescending);
+// searchBtn?.addEventListener("click", sortMoviesRated);
+
 
 
 
@@ -1052,8 +1052,9 @@ for (let i = 0; i < theMovies.length; i++) {
 
 //! function to create one movie tile as html
 //  create element  append append child
-// from the lesson on createElement:
 
+
+// from the lesson on createElement:
 // function renderMovies(movies: movieItem[]) {
 //   if (movieContainer) movieContainer.innerHTML = "";
 
@@ -1109,7 +1110,6 @@ for (let i = 0; i < theMovies.length; i++) {
 //   });
 // }
 
-
 // renderMovies(theMovies);
 
 
@@ -1121,6 +1121,8 @@ for (let i = 0; i < theMovies.length; i++) {
 sortAscBtn?.addEventListener("click", sortMoviesAscending);
 sortDescBtn?.addEventListener("click", sortMoviesDescending);
 searchBtn?.addEventListener("click", sortMoviesRated);
+
+
 
 searchBtn?.addEventListener("click",() => 
     filterMovies(userSearchInput ? userSearchInput.value : "")
