@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./movies4u.ts"></script>
+    <style>  /* tristan memorial styling */
+        img {
+          max-width: 100%;
+          border-radius: 0.5rem;
+        }
+        button {
+          margin-bottom: 1rem;
+          /* display: flex; */
+        }
+        .products {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+        }
+        .shop-item {
+          padding: 2rem;
+          background-color: bisque;
+          border: 1px solid teal;
+          border-radius: 0.5em;
+        }
+      </style>
+</head>
+
+<body>
+
+    <h1> 🎬🍀 MOVIES 4 YOU 🎬🍀  </h1>
+    <button class="year-asc">YEAR UP</button>
+    <button class="year-desc">YEAR DOWN</button>
+    <button class="rate-desc">BEST RATE</button>
+    <input type="text" placeholder="find your movie" >
+    <button class="search-btn">Suchen</button>
+    <section class="movies"></section>
+    
+    
+    <footer>created with 🧚🏼‍♀️, 🍀 and 👾 by ninaraffaela</footer>
+</body>
+</html>
