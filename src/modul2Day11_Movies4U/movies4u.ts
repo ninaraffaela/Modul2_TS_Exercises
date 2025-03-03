@@ -1,5 +1,5 @@
 // funtion to create all the movie tiles in the html wrapper
-// change movie year from string to number - Number(...movies.)
+
 // eventlisteners:
 // btn year asc
 // btn year desc
@@ -9,8 +9,27 @@
 // // Bonus: combinations:
 // // Bonus: array with all the genres - (...movies.genre[])
 
-//!  array with all the movies - define type
-// #(?? should we keep the original array, with the types as it is, or should we marry it with the defined type?)
+
+
+// ! HTML CONNECTION
+
+const movieContainer = document.querySelector("movies");
+const sortAscBtn = document.querySelector(".year-asc");
+const sortDescBtn = document.querySelector(".year-desc");
+const sortRateBtn = document.querySelector(".rate-desc");
+const userSearchInput = document.querySelector<HTMLInputElement>("input");
+const searchBtn = document.querySelector(".search-btn")
+
+
+// ! EVENTLISTENERS
+sortAscBtn?.addEventListener("click", sortMoviesAscending);
+sortDescBtn?.addEventListener("click", sortMoviesDescending);
+searchBtn?.addEventListener("click", sortMoviesRated);
+
+
+
+//!  DEFINE THE TYPES FOR THE MOVIES array
+// ?? should we keep the original array, with the types as it is, or should we marry it with the defined type?)
 //# research: how to change the type of the year from string to number. in the type? in the function later? nah i think i need it already in the type.
 // ? where to change the   year: Number(string) into a string?; 
 // ? can i type year: Number(string); in the type?
@@ -29,6 +48,7 @@ type MovieItem = [
 // -> type defined.check.  
 // - original array redefined with the created type.  check
 // - changed brackets from {} to []. not entirely sure why, but it worked lovely
+
 
 // const movies: MovieItem[] = [
 //   [
@@ -979,7 +999,7 @@ type MovieItem = [
 // console.log(movies.length); 
 
 
-//*  For TestReasons - moviearray with 2 movies
+//! TESTREASONS For TestReasons - moviearray with 2 movies
 const movies: MovieItem[] = [
     [
       "The Shawshank Redemption",
@@ -998,7 +1018,6 @@ const movies: MovieItem[] = [
       "9.2",
     ],
 ];
-
 
 
 // const movieContainer;
@@ -1026,6 +1045,9 @@ for (let i = 0; i < theMovies.length; i++) {
 
 }
 
+
+//# how to use that outside of the forloop?
+// change movie year from string to number - Number(...movies.)
 
 
 //! function to create one movie tile as html
@@ -1091,7 +1113,48 @@ for (let i = 0; i < theMovies.length; i++) {
 // renderMovies(theMovies);
 
 
-//! btn year asc
+
+
+
+
+
+sortAscBtn?.addEventListener("click", sortMoviesAscending);
+sortDescBtn?.addEventListener("click", sortMoviesDescending);
+searchBtn?.addEventListener("click", sortMoviesRated);
+
+searchBtn?.addEventListener("click",() => 
+    filterMovies(userSearchInput ? userSearchInput.value : "")
+  );
+  
+  // how to react to every letter?
+// userSearchInput?.addEventListener("keyup", () => 
+//   filterProducts(userSearchInput ? userSearchInput.value : "")
+// );
+
+
+// ! FUNCTION  - btn year asc -
+// function sortMoviesAscending
+
 // theMovies.sort((a, b) => a.localeCompare(b))
 
-// ! btn year desc
+
+
+
+// ! FUNCTION - btn year desc
+// function sortMoviesDescending
+
+// theMovies.sort((a, b) => b.localCompare(a))
+
+
+// ! FUNCITON - btn rated
+// function sortMoviesRated
+
+
+// ! FUNCTION   Filter Movies
+// - idea from class day 10 - create Element
+// function filterProducts(searchTerm: string) {
+//     let filteredProducts = [...shopItemsArr]
+//     filteredProducts = filteredProducts.filter((itemPizza) => itemPizza.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+//     renderMovies(filteredProducts);
+    
+//   }
