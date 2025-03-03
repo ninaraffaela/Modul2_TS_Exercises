@@ -1079,28 +1079,24 @@ function sortMoviesRated() {
 
 
 // ! FUNCTION   Filter Movies
-// - so far: only title searchable
-function filterMovies(searchTerm: string) {
-    let filteredMovies = [...theMovies]
-    filteredMovies= filteredMovies.filter(
-        (singleMovie) => singleMovie.title.toLowerCase().includes(searchTerm.toLowerCase()))
-    renderMovies(filteredMovies);
-    console.log("ive been clicked");
-  };
-//   # add search in year and director. where to put it??
-
-
-
-
+// -  this version: only title searchable
 // function filterMovies(searchTerm: string) {
 //     let filteredMovies = [...theMovies]
 //     filteredMovies= filteredMovies.filter(
-//         (singleMovie) => singleMovie.title.toLowerCase().includes(searchTerm.toLowerCase()) || (singleMovie) => singleMovie.year.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//         (singleMovie) => singleMovie.director.toLowerCase().includes(searchTerm.toLowerCase()))
+//         (singleMovie) => singleMovie.title.toLowerCase().includes(searchTerm.toLowerCase()))
 //     renderMovies(filteredMovies);
 //     console.log("ive been clicked");
 //   };
-//   # add search in year and director. where to put it??
+
+// - filter for title, year, director 
+function filterMovies(searchTerm: string) {
+    let filteredMovies = [...theMovies]
+    filteredMovies= filteredMovies.filter(
+        (singleMovie) => singleMovie.title.toLowerCase().includes(searchTerm.toLowerCase()) ||  singleMovie.year.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        singleMovie.director.toLowerCase().includes(searchTerm.toLowerCase()))
+    renderMovies(filteredMovies);
+    console.log("ive been clicked");
+  };
 
 
 
@@ -1108,13 +1104,15 @@ function filterMovies(searchTerm: string) {
 
 
 
-    // - BONUS IDEAS for Function renderMovies:
-    // - if we want to add a movieposter later:
-    // - add imgs to the movies array.  restyle the movieTile to fit a picture.
-    // - alternative idea: put a picture into the mouse hover of each movietile.
-    //   const image = document.createElement("img");
-    //   image.src = singlemovieItem.imgUrl;
-    //   image.alt = singlemovieItem.title;
+// - BONUS IDEAS for Function renderMovies:
+// - if we want to add a movieposter later:
+// - add imgs to the movies array.  restyle the movieTile to fit a picture.
+// - alternative idea: put a picture into the mouse hover of each movietile.
+//   const image = document.createElement("img");
+//   image.src = singlemovieItem.imgUrl;
+//   image.alt = singlemovieItem.title;
+
+
 
 
 
