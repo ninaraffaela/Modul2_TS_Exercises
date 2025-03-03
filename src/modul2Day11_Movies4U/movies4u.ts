@@ -25,6 +25,16 @@ const movieContainer = document.querySelector(".movies");
 // sortDescBtn?.addEventListener("click", sortMoviesDescending);
 // searchBtn?.addEventListener("click", sortMoviesRated);
 
+// 
+searchBtn?.addEventListener("click",() => 
+    filterMovies(userSearchInput ? userSearchInput.value : "")
+  );
+  
+  // how to react to every letter?
+// userSearchInput?.addEventListener("keyup", () => 
+//   filterProducts(userSearchInput ? userSearchInput.value : "")
+// );
+
 
 
 
@@ -1026,28 +1036,30 @@ const movies: MovieItem[] = [
 // ! Define the variable from the original array
 
 const theMovies = [...movies];
-// console.log(theMovies);
+console.log(theMovies);
 
 
-const movieTitle = theMovies[0];
-console.log(movieTitle); // that´s not the title. but the full first movie with everything
+
 
 
 
 // bsp
 for (let i = 0; i < theMovies.length; i++) {
-    console.log(theMovies[i][0]); // title
-    console.log(Number(theMovies[i][1])); // year
-    console.log(theMovies[i][2]); // director
-    console.log(theMovies[i][3]); // length
-    console.log(theMovies[i][4]); // genre
-    console.log(Number(theMovies[i][5])); // rating
+  
 
-}
-
+    // console.log(movieTitle); // that´s not the title. but the full first movie with everything
+    const movieTitle = theMovies[i][0];
+    const movieYear = Number(theMovies[i][1]); 
+    const movieDirector = theMovies[i][2];
+    const movieLength = theMovies[i][3];
+    const movieGenre = theMovies[i][4];
+    const movieRating = Number(theMovies[i][5]);
+    // return movieTitle, movieYear, movieDirector, movieLength, movieGenre, movieRating, movieTitle
+};
 
 //# how to use that outside of the forloop?
-// change movie year from string to number - Number(...movies.)
+
+
 
 
 //! function to create one movie tile as html
@@ -1055,87 +1067,74 @@ for (let i = 0; i < theMovies.length; i++) {
 
 
 // from the lesson on createElement:
-// function renderMovies(movies: movieItem[]) {
-//   if (movieContainer) movieContainer.innerHTML = "";
+function renderMovies(theMovies: MovieItem[]) {
+  if (movieContainer) movieContainer.innerHTML = "";
 
-//   movies.forEach((singlemovieItem) => {
-//     // create a div. give it the class movie-item
-//     const movieCard = document.createElement("div");
-//     movieCard.classList.add("movie-item");
+  movies.forEach((singlemovieItem) => {
+    // create a div. give it the class movie-item
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("movie-item");
 
-//     // create a h2.  TITLE
-//     const title = document.createElement("h2");
-//     title.innerText = singlemovieItem.title;
+    // create a h2.  TITLE
+    const title = document.createElement("h2");
+    title.innerText = singlemovieItem.title;
 
-//     //  create a p tag. YEAR
-//     // # not sure if that´s the right place to make it a number...
-//     const year = document.createElement("p");
-//     year.innerText = `Number(${singlemovieItem.year}) €`;
-//     // year.hidden = true;
-//     // year.style.backgroundColor = "green";
+    //  create a p tag. YEAR
+    // # not sure if that´s the right place to make it a number...
+    const year = document.createElement("p");
+    year.innerText = `Number(${singlemovieItem.year}) €`;
+    // year.hidden = true;
+    // year.style.backgroundColor = "green";
 
-//     // DIRECTOR
-//     const director = document.createElement("p");
-//     director.innerText = singlemovieItem.director;
+    // DIRECTOR
+    const director = document.createElement("p");
+    director.innerText = singlemovieItem.director;
 
-//     // LENGTH
-//     const length = document.createElement("p");
-//     length.innerText = singlemovieItem.length;
+    // LENGTH
+    const length = document.createElement("p");
+    length.innerText = singlemovieItem.length;
 
-//     // GENRE
-//     // # RESEARCH string and string[]
-//     // const genre = document.createElement("p");
-//     // genre.innerHTML = singlemovieItem.genre;
+    // GENRE
+    // # RESEARCH string and string[]
+    // const genre = document.createElement("p");
+    // genre.innerHTML = singlemovieItem.genre;
 
-//     // RATING
-//     const rating = document.createElement("p");
-//     rating.innerText = singlemovieItem.rating;
 
-//     // - BONUS IDEAS:
-//     // - if we want to add a movieposter later:
-//     // - add imgs to the movies array.  restyle the movieTile to fit a picture.
-//     // - alternative idea: put a picture into the mouse hover of each movietile.
-//     //   const image = document.createElement("img");
-//     //   image.src = singlemovieItem.imgUrl;
-//     //   image.alt = singlemovieItem.title;
+    // RATING
+    const rating = document.createElement("p");
+    rating.innerText = singlemovieItem.rating;
+
+
 
 
     
 
-//     movieCard.append(title, year, director, length, rating);
+    movieCard.append(title, year, director, length, rating);
 
-//     if (movieContainer) {
-//       movieContainer.appendChild(movieCard);
-//     }
-//   });
-// }
+    if (movieContainer) {
+      movieContainer.appendChild(movieCard);
+    }
+  });
+}
 
-// renderMovies(theMovies);
-
-
+renderMovies(theMovies);
 
 
 
 
 
-sortAscBtn?.addEventListener("click", sortMoviesAscending);
-sortDescBtn?.addEventListener("click", sortMoviesDescending);
-searchBtn?.addEventListener("click", sortMoviesRated);
 
 
 
-searchBtn?.addEventListener("click",() => 
-    filterMovies(userSearchInput ? userSearchInput.value : "")
-  );
-  
-  // how to react to every letter?
-// userSearchInput?.addEventListener("keyup", () => 
-//   filterProducts(userSearchInput ? userSearchInput.value : "")
-// );
+
 
 
 // ! FUNCTION  - btn year asc -
-// function sortMoviesAscending
+function sortMoviesAscending() {
+    console.log("ive been clicked");
+    const sortedMovieTitles = [...theMovies[][0]];
+    sortedMovies.sort((a, b) => a.title.localeCompare(b));
+}
 
 // theMovies.sort((a, b) => a.localeCompare(b))
 
@@ -1145,7 +1144,13 @@ searchBtn?.addEventListener("click",() =>
 // ! FUNCTION - btn year desc
 // function sortMoviesDescending
 
-// theMovies.sort((a, b) => b.localCompare(a))
+
+
+function sortMoviesAscending() {
+    console.log("ive been clicked");
+    const sortedMovieTitles = [...theMovies[][0]];
+    sortedMovies.sort((a, b) => b.title.localeCompare(a));
+}
 
 
 // ! FUNCITON - btn rated
@@ -1160,3 +1165,15 @@ searchBtn?.addEventListener("click",() =>
 //     renderMovies(filteredProducts);
     
 //   }
+
+
+
+
+
+    // - BONUS IDEAS for Function renderMovies:
+    // - if we want to add a movieposter later:
+    // - add imgs to the movies array.  restyle the movieTile to fit a picture.
+    // - alternative idea: put a picture into the mouse hover of each movietile.
+    //   const image = document.createElement("img");
+    //   image.src = singlemovieItem.imgUrl;
+    //   image.alt = singlemovieItem.title;
