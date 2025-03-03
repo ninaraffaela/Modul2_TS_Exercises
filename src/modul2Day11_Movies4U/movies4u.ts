@@ -1,10 +1,3 @@
-// funtion to create all the movie tiles in the html wrapper
-
-// eventlisteners:
-// btn year asc
-// btn year desc
-// search  bar - search btn
-// refresh - event: Event  event.preventDefault
 
 // // Bonus: combinations:
 // // Bonus: array with all the genres - (...movies.genre[])
@@ -25,10 +18,9 @@ const movieContainer = document.querySelector(".movies");
 // sortDescBtn?.addEventListener("click", sortMoviesDescending);
 // searchBtn?.addEventListener("click", sortMoviesRated);
 
-// 
-searchBtn?.addEventListener("click",() => 
-    filterMovies(userSearchInput ? userSearchInput.value : "")
-  );
+// searchBtn?.addEventListener("click",() => 
+//     filterMovies(userSearchInput ? userSearchInput.value : "")
+//   );
   
   // how to react to every letter?
 // userSearchInput?.addEventListener("keyup", () => 
@@ -39,10 +31,6 @@ searchBtn?.addEventListener("click",() =>
 
 
 //!  DEFINE THE TYPES FOR THE MOVIES array
-// ?? should we keep the original array, with the types as it is, or should we marry it with the defined type?)
-//# research: how to change the type of the year from string to number. in the type? in the function later? nah i think i need it already in the type.
-// ? where to change the   year: Number(string) into a string?; 
-// ? can i type year: Number(string); in the type?
 
 type MovieItem = [
   title: string,
@@ -54,10 +42,6 @@ type MovieItem = [
 ];
 
 
-// # research: how to write the type? movies: MovieItem ? which brackets?
-// -> type defined.check.  
-// - original array redefined with the created type.  check
-// - changed brackets from {} to []. not entirely sure why, but it worked lovely
 
 
 // const movies: MovieItem[] = [
@@ -1006,10 +990,13 @@ type MovieItem = [
 //     "8.3",
 //   ],
 // ];
+
 // console.log(movies.length); 
 
 
 //! TESTREASONS For TestReasons - moviearray with 2 movies
+
+
 const movies: MovieItem[] = [
     [
       "The Shawshank Redemption",
@@ -1030,7 +1017,7 @@ const movies: MovieItem[] = [
 ];
 
 
-// const movieContainer;
+
 
 
 // ! Define the variable from the original array
@@ -1043,17 +1030,17 @@ console.log(theMovies);
 
 
 
-// bsp
+// 
 for (let i = 0; i < theMovies.length; i++) {
   
 
     // console.log(movieTitle); // that´s not the title. but the full first movie with everything
     const movieTitle = theMovies[i][0];
-    const movieYear = Number(theMovies[i][1]); 
+    const movieYear = theMovies[i][1]; 
     const movieDirector = theMovies[i][2];
     const movieLength = theMovies[i][3];
     const movieGenre = theMovies[i][4];
-    const movieRating = Number(theMovies[i][5]);
+    const movieRating = theMovies[i][5];
     // return movieTitle, movieYear, movieDirector, movieLength, movieGenre, movieRating, movieTitle
 };
 
@@ -1061,8 +1048,8 @@ for (let i = 0; i < theMovies.length; i++) {
 
 
 
-
-//! function to create one movie tile as html
+// funtion to create all the movie tiles in the html wrapper
+//! FUNCTION to create one movie tile as html
 //  create element  append append child
 
 
@@ -1077,22 +1064,21 @@ function renderMovies(theMovies: MovieItem[]) {
 
     // create a h2.  TITLE
     const title = document.createElement("h2");
-    title.innerText = singlemovieItem.title;
+    title.innerText = singlemovieItem[0];
 
     //  create a p tag. YEAR
     // # not sure if that´s the right place to make it a number...
     const year = document.createElement("p");
-    year.innerText = `Number(${singlemovieItem.year}) €`;
-    // year.hidden = true;
-    // year.style.backgroundColor = "green";
+    year.innerText = singlemovieItem[1]; 
 
     // DIRECTOR
     const director = document.createElement("p");
-    director.innerText = singlemovieItem.director;
+    director.innerText = singlemovieItem[2];
 
     // LENGTH
     const length = document.createElement("p");
     length.innerText = singlemovieItem.length;
+
 
     // GENRE
     // # RESEARCH string and string[]
@@ -1132,39 +1118,34 @@ renderMovies(theMovies);
 // ! FUNCTION  - btn year asc -
 function sortMoviesAscending() {
     console.log("ive been clicked");
-    const sortedMovieTitles = [...theMovies[][0]];
-    sortedMovies.sort((a, b) => a.title.localeCompare(b));
-}
-
-// theMovies.sort((a, b) => a.localeCompare(b))
-
-
-
+    const sortedMovieTitles = [...theMovies[1]];
+    sortedMovieTitles.sort((a, b) => a.localeCompare(b));
+};
 
 // ! FUNCTION - btn year desc
-// function sortMoviesDescending
-
-
-
-function sortMoviesAscending() {
+function sortMoviesDescending(a: string, b: string) {
     console.log("ive been clicked");
-    const sortedMovieTitles = [...theMovies[][0]];
-    sortedMovies.sort((a, b) => b.title.localeCompare(a));
-}
+    const sortedMovieTitles = [...theMovies[1]];
+    sortedMovieTitles.sort((a, b) => b.localeCompare(a));
+};
 
 
 // ! FUNCITON - btn rated
-// function sortMoviesRated
+function sortMoviesRated(a: string, b: string) {
+    console.log("ive been clicked");
+    const ratedMovies = [...theMovies[5]];
+    ratedMovies.sort((a, b) => b.localeCompare(a));
+};
+
 
 
 // ! FUNCTION   Filter Movies
 // - idea from class day 10 - create Element
-// function filterProducts(searchTerm: string) {
-//     let filteredProducts = [...shopItemsArr]
-//     filteredProducts = filteredProducts.filter((itemPizza) => itemPizza.productName.toLowerCase().includes(searchTerm.toLowerCase()))
-//     renderMovies(filteredProducts);
-    
-//   }
+function filterProducts(searchTerm: string) {
+    let filteredProducts = [...shopItemsArr]
+    filteredProducts = filteredProducts.filter((itemPizza) => itemPizza.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+    renderMovies(filteredProducts);
+  };
 
 
 

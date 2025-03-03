@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 5vh;
+    color: teal;
+}
+
+header {
+    margin: 2vw;
+}
+
+main {
+    margin: 2vw;
+}
+
+button {
+    margin-bottom: 2rem;
+    margin: 0.5vw;
+    background-color: rgb(129, 191, 161);
+    border-radius: 0.5rem;
+    padding: 5px;
+    /* display: flex; */
+  }
+
+input {
+    margin-left: 1vw;
+    font-size: 2rem;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+.movie-item {
+    padding: 2rem;
+    background-color: rgb(129, 191, 161);
+    border: 1px solid teal;
+    border-radius: 0.5em;
+  }
+
+footer {
+    margin: 0 2vw;
+    background-color: teal;
+    color: bisque;
+}
