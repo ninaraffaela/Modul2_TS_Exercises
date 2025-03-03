@@ -8,35 +8,34 @@ const movieContainer = document.querySelector(".movies");
 
 
 // ! EVENTLISTENERS
-// sortAscBtn?.addEventListener("click", sortMoviesAscending);
-// sortDescBtn?.addEventListener("click", sortMoviesDescending);
-// searchBtn?.addEventListener("click", sortMoviesRated);
+sortAscBtn?.addEventListener("click", sortMoviesAscending);
+sortDescBtn?.addEventListener("click", sortMoviesDescending);
+sortRateBtn?.addEventListener("click", sortMoviesRated);
 
 searchBtn?.addEventListener("click",() => 
     filterMovies(userSearchInput ? userSearchInput.value : "")
   );
   
 //   how to react to every letter?
-// userSearchInput?.addEventListener("keyup", () => 
-//   filterMovies(userSearchInput ? userSearchInput.value : "")
-// );
+userSearchInput?.addEventListener("keyup", () => 
+  filterMovies(userSearchInput ? userSearchInput.value : "")
+);
 
 
 
 
 //!  DEFINE THE TYPES FOR THE MOVIES array
 
-type MovieItem = [
+type MovieItem = {
   title: string,
   year: string,
   director: string,
   length: string,
   genre: string[],
   rating: string,
-];
+};
 
-
-const movies: MovieItem[] = [
+const moviesArray: [string, string, string, string, string[], string][] = [
   [
     "The Shawshank Redemption",
     "1994",
@@ -983,102 +982,61 @@ const movies: MovieItem[] = [
   ],
 ];
 
-// ! for Testing: movieArray with 2 movies
+// ! Change Types from original
 
-// const movies: MovieItem[] = [
-//     [
-//       "The Shawshank Redemption",
-//       "1994",
-//       "Frank Darabont",
-//       "2h 22min",
-//       ["Crime", "Drama"],
-//       "9.3",
-//     ],
-//     [
-//       "The Godfather",
-//       "1972",
-//       "Francis Ford Coppola",
-//       "2h 55min",
-//       ["Crime", "Drama"],
-//       "9.2",
-//     ],
-// ];
-
-//! TESTREASONS For TestReasons - moviearray with 2 movies
+// const theMovies = [...moviesArray];
+// // console.log(theMovies);
+// // console.log(theMovies.length);
 
 
-
-
-
-
-// ! Define the variable from the original array
-// not sure if needed. really struggling with the types of the movies....
-// #where to change the types
-
-
-
-const theMovies = [...movies];
-console.log(theMovies);
-console.log(theMovies.length);
-
-
-
-
-// // get the titles, the year, as its own variable... but how to get it out. return seems to work only on 1
-// for (let i = 0; i < theMovies.length; i++) {
+// - from mina
+const theMovies: MovieItem[] = moviesArray.map(
+    ([title, year, director, movielength, genre, rating]) => ({
+      title,
+      year,
+      director,
+      movielength,
+      genre,
+      rating,
+    })
+  );
   
-//     const movieTitle = theMovies[i][0];
-//     const movieYear = theMovies[i][1]; 
-//     const movieDirector = theMovies[i][2];
-//     const movieLength = theMovies[i][3];
-//     const movieGenre = theMovies[i][4];
-//     const movieRating = theMovies[i][5];
-//     // return movieTitle, movieYear, movieDirector, movieLength, movieGenre, movieRating, movieTitle
-// };
-//# how to use that outside of the forloop?
-
-
+  console.log(theMovies);
 
 
 
 //! FUNCTION - create the movie as movieCard and put it into the html
-//  create element  append append child
-
-// code from the lesson on createElement:
 function renderMovies(theMovies: MovieItem[]) {
   if (movieContainer) movieContainer.innerHTML = "";
 
-  movies.forEach((singlemovieItem) => {
+  theMovies.forEach((singleMovieItem) => {
     // create a div. give it the class movie-item
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie-item");
 
     // create a h2.  TITLE
     const title = document.createElement("h2");
-    title.innerText = singlemovieItem[0];
+    title.innerText = singleMovieItem.title;
 
     //  create a p tag. YEAR
     const year = document.createElement("p");
-    year.innerText = `year: ${singlemovieItem[1]}`; 
+    year.innerText = `year: ${singleMovieItem.year}`; 
 
     // DIRECTOR
     const director = document.createElement("p");
-    director.innerText = `director: ${singlemovieItem[2]}`;
+    director.innerText = `director: ${singleMovieItem.director}`;
 
     // LENGTH
     const length = document.createElement("p");
-    length.innerText = `length: ${singlemovieItem[3]}`;
+    length.innerText = `length: ${singleMovieItem.length}`;
 
     // GENRE
     const genre = document.createElement("p");
-    genre.innerText = `genre: ${singlemovieItem[4]}`;
-
+    genre.innerText = `genre: ${singleMovieItem.genre}`;
 
     // RATING
     const rating = document.createElement("p");
-    rating.innerText = `rating: ${singlemovieItem[5]}`;
-
-
+    rating.innerText = `rating: ${singleMovieItem.rating}`;
 
     movieCard.append(title, year, director, length, rating);
 
@@ -1093,45 +1051,56 @@ renderMovies(theMovies);
 
 
 
-
-
-// # locale compare not working
 // ! FUNCTION  - btn year asc -
-// function sortMoviesAscending() {
-//     console.log("ive been clicked");
-//     const sortedMovieTitles = [...theMovies[1]];
-//     sortedMovieTitles.sort((a, b) => a.localeCompare(b));
-// };
+function sortMoviesAscending() {
+    console.log("ive been clicked");
+    const sortedMoviesYearAsc = [...theMovies];
+    sortedMoviesYearAsc.sort((a, b) => a.year.localeCompare(b.year));
+    renderMovies(sortedMoviesYearAsc);
+};
 
 // ! FUNCTION - btn year desc
-// function sortMoviesDescending(a: string, b: string) {
-//     console.log("ive been clicked");
-//     const sortedMovieTitles = [...theMovies[1]];
-//     sortedMovieTitles.sort((a, b) => b.localeCompare(a));
-// };
-
+function sortMoviesDescending() {
+    console.log("ive been clicked");
+    const sortedMoviesYearDesc = [...theMovies];
+    sortedMoviesYearDesc.sort((a, b) => b.year.localeCompare(a.year));
+    renderMovies(sortedMoviesYearDesc);
+};
 
 // ! FUNCITON - btn rated
-// function sortMoviesRated(a: string, b: string) {
-//     console.log("ive been clicked");
-//     const ratedMovies = [...theMovies[5]];
-//     ratedMovies.sort((a, b) => b.localeCompare(a));
-// };
+function sortMoviesRated() {
+    console.log("ive been clicked");
+    const ratedMovies = [...theMovies];
+    ratedMovies.sort((a, b) => b.rating.localeCompare(a.rating));
+    renderMovies(ratedMovies);
+};
 
 
 
 
 // ! FUNCTION   Filter Movies
-// - idea from class day 10 - create Element
+// - so far: only title searchable
 function filterMovies(searchTerm: string) {
     let filteredMovies = [...theMovies]
-    filteredMovies= filteredMovies.filter((singleMovie) => singleMovie[0].toLowerCase().includes(searchTerm.toLowerCase()))
+    filteredMovies= filteredMovies.filter(
+        (singleMovie) => singleMovie.title.toLowerCase().includes(searchTerm.toLowerCase()))
     renderMovies(filteredMovies);
     console.log("ive been clicked");
-    
   };
+//   # add search in year and director. where to put it??
 
 
+
+
+// function filterMovies(searchTerm: string) {
+//     let filteredMovies = [...theMovies]
+//     filteredMovies= filteredMovies.filter(
+//         (singleMovie) => singleMovie.title.toLowerCase().includes(searchTerm.toLowerCase()) || (singleMovie) => singleMovie.year.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//         (singleMovie) => singleMovie.director.toLowerCase().includes(searchTerm.toLowerCase()))
+//     renderMovies(filteredMovies);
+//     console.log("ive been clicked");
+//   };
+//   # add search in year and director. where to put it??
 
 
 
@@ -1146,3 +1115,20 @@ function filterMovies(searchTerm: string) {
     //   const image = document.createElement("img");
     //   image.src = singlemovieItem.imgUrl;
     //   image.alt = singlemovieItem.title;
+
+
+
+// * alter Schrott
+
+    // // get the titles, the year, as its own variable... but how to get it out. return seems to work only on 1
+// for (let i = 0; i < theMovies.length; i++) {
+  
+//     const movieTitle = theMovies[i][0];
+//     const movieYear = theMovies[i][1]; 
+//     const movieDirector = theMovies[i][2];
+//     const movieLength = theMovies[i][3];
+//     const movieGenre = theMovies[i][4];
+//     const movieRating = theMovies[i][5];
+//     // return movieTitle, movieYear, movieDirector, movieLength, movieGenre, movieRating, movieTitle
+// };
+//# how to use that outside of the forloop?
