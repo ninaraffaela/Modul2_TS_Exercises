@@ -15,9 +15,13 @@ h1 {
 }
 
 h2 {
+    font-size: 2rem;
     color: teal;
+    text-shadow: antiquewhite 1px 1px 2px;
 }
-
+body {
+    background-color: bisque;
+}
 header {
     margin: 2vw;
 }

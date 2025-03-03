@@ -983,12 +983,7 @@ const movies: MovieItem[] = [
   ],
 ];
 
-
-
-
-
-
-
+// ! for Testing: movieArray with 2 movies
 
 // const movies: MovieItem[] = [
 //     [
@@ -1008,6 +1003,7 @@ const movies: MovieItem[] = [
 //       "9.2",
 //     ],
 // ];
+
 //! TESTREASONS For TestReasons - moviearray with 2 movies
 
 
@@ -1019,16 +1015,18 @@ const movies: MovieItem[] = [
 // not sure if needed. really struggling with the types of the movies....
 // #where to change the types
 
+
+
 const theMovies = [...movies];
 console.log(theMovies);
+console.log(theMovies.length);
 
 
 
 
-// // 
+// // get the titles, the year, as its own variable... but how to get it out. return seems to work only on 1
 // for (let i = 0; i < theMovies.length; i++) {
   
-
 //     const movieTitle = theMovies[i][0];
 //     const movieYear = theMovies[i][1]; 
 //     const movieDirector = theMovies[i][2];
@@ -1045,7 +1043,6 @@ console.log(theMovies);
 
 //! FUNCTION - create the movie as movieCard and put it into the html
 //  create element  append append child
-
 
 // code from the lesson on createElement:
 function renderMovies(theMovies: MovieItem[]) {
@@ -1130,6 +1127,8 @@ function filterMovies(searchTerm: string) {
     let filteredMovies = [...theMovies]
     filteredMovies= filteredMovies.filter((singleMovie) => singleMovie[0].toLowerCase().includes(searchTerm.toLowerCase()))
     renderMovies(filteredMovies);
+    console.log("ive been clicked");
+    
   };
 
 
